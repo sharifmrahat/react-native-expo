@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, Button } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, Button, StatusBar } from 'react-native';
 
 export default function App() {
+  console.log(StatusBar)
   return (
-    <View className="flex flex-col my-20 bg-gray-500">
-     <Text className="text-red-700">Hello World</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+     <View className="flex-1 flex-col mb-20 bg-gray-200 border-t-4 border-t-red-800">
+     <Text className="text-red-700 text-3xl font-bold text-center">Hello World</Text>
+     </View>
+    </SafeAreaView>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop:StatusBar.currentHeight
   },
   textContainer: {
     marginVertical: 20,
